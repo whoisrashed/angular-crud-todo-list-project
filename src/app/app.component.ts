@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import { Todo } from './model';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subject, Subscription, takeUntil } from 'rxjs';
+import { BlogPostService } from './blog-post.service';
+import { Post } from './model';
+
 
 
 
@@ -8,59 +12,30 @@ import { Todo } from './model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
 
-  todoList :Todo []=[];
-  todo:Todo = this.initTodo;
+  posts$!:Observable< Post[]>;
 
+  private destroy$: Subject<void> = new Subject();
 
-
-  get initTodo ():Todo{
-    return {
-      Title:'',
-      Id:null
-    }
+  blogPost = inject(BlogPostService)
+  constructor() {
   }
 
-  addTodo():void {
-    console.log(this.todo)
-
-
-    if(this.todo.Id){
-
-    this.todoList = this.todoList.map(o=> {
-
-      if(o.Id == this.todo.Id){
-        o.Title = this.todo.Title;
-      }
-      return o;
-    })
-
-
-      // update logic
-    } 
-    else {
-      // create logic
-      this.todo.Id = Date.now();
-      this.todoList.push({...this.todo});
-    }
-
-  
-
-
-    console.log(this.todoList)
-
-    this.todo =this.initTodo;
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
-  editTodo(todo:Todo) :void{
+  ngOnInit(): void {
 
-    this.todo = {...todo};
+
+
+   this.posts$= this.blogPost.getPosts()
+     
+
+
   }
 
-  delteTodo(id:number):void {
-    this.todoList = this.todoList.filter(o=>o.Id!=id);
 
-  }
- 
 }

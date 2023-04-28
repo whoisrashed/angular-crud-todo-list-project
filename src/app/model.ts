@@ -1,4 +1,6 @@
-export interface Todo {
-    Title:string;
-    Id:any;
+export interface Post {
+    userId:string;
+    title:string;
+    id:string;
+    body:string;
 }

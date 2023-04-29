@@ -1,24 +1,65 @@
-
-
-
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #f2f2f2;
-    font-family: 'Raleway', sans-serif;
-  }
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+  font-family: 'Raleway', sans-serif;
+}
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-   margin-top: 100px;
-   font-family: 'Raleway', sans-serif;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  font-family: 'Raleway', sans-serif;
+}
 
-  
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+#password-strength {
+  height: 5px;
+  width: 100%;
+  display: block;
+  background-color: #ccc;
+  width: 168px;
+  margin-top: 10px;
+}
+
+#password-strength span {
+  display: block;
+  height: 5px;
+  border-radius: 2px;
+  transition: all 500ms ease;
+}
+
+
+
+.strength-1 span { 
+  /* weak password */
+  background-color: red;
+  width: 10%;
+}
+
+.strength-2 span {
+  /* medium password */
+  background-color: orange;
+  width: 25%;
+}
+
+
+
+.strength-3 span {
+  /* strong password */
+  background-color: green;
+  width: 100%;
+}

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductsComponent } from './products.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductResolverService } from './services/product-resolver.service';
 
 const routes:Routes =[
   {
@@ -11,7 +12,11 @@ const routes:Routes =[
   },
   {
     path:'detail/:id',  //domain/product/detail
-    component:ProductDetailsComponent
+    resolve :{
+      product: ProductResolverService
+    },
+    component:ProductDetailsComponent,
+  
   }
 ]
 

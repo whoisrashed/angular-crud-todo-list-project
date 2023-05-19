@@ -1,6 +1,7 @@
 
 
-<button (click)="back()">back </button>
+<button (click)="routeChange()">change Route </button>
+
 
 
 <div class="container my-5">
@@ -22,7 +23,7 @@
         <div class="tab-pane fade show in active" id="panel31" role="tabpanel">
   
           <!-- Grid row -->
-          <div class="row">
+          <div class="row" *ngIf="product">
   
             <!-- Grid column -->
             <div class="col-md-12 col-lg-4">
@@ -31,13 +32,13 @@
               <a class="card hoverable mb-4" data-toggle="modal" data-target="#basicExampleModal">
   
                 <!-- Card image -->
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/img3.jpg" alt="Card image cap">
+                <img class="card-img-top" [src]="product.image" alt="Card image cap">
   
                 <!-- Card content -->
                 <div class="card-body">
   
-                  <h5 class="my-3">Phone Bag</h5>
-                  <p class="card-text text-uppercase mb-3">Bag, Box</p>
+                  <h5 class="my-3">{{product.title }}</h5>
+                  <p class="card-text text-uppercase mb-3">{{ product.category}}</p>
   
                 </div>
   

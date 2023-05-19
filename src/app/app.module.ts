@@ -7,49 +7,48 @@ import { ContactSupportComponent } from './contact-support/contact-support.compo
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
-import {RouterModule, Routes} from '@angular/router';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 
-const routes:Routes =[
+const routes: Routes = [
 
-  // {
-  //   path:'',
-  //   redirectTo:"home",
-  //   pathMatch:'full'
-   
-  // },
 
   {
-    path:'',
-    component:HomeComponent,
-   
+    path: '',
+   // component: HomeComponent,
+   redirectTo:'/home',
+   pathMatch:'full'
   },
   {
-    path:'about',
-    component:AboutComponent
+    path:'home',
+    component:HomeComponent
   },
   {
-    path:'contact',
-   // component:ContactSupportComponent,
-    loadComponent:()=>import('./contact-support/contact-support.component').then(x=>x.ContactSupportComponent)
+    path: 'about',
+    component: AboutComponent
   },
   {
-    path:'products',
-    loadChildren:()=>import('./products/products.module').then(x=>x.ProductsModule)
+    path: 'contact',
+    // component:ContactSupportComponent,
+    loadComponent: () => import('./contact-support/contact-support.component').then(x => x.ContactSupportComponent)
   },
   {
-    path:'**',
-    component:PageNotFoundComponent,
-   //redirectTo:''
-  }
+    path: 'products',
+    loadChildren: () => import('./products/products.module').then(x => x.ProductsModule)
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  },
 ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-   // ContactSupportComponent,
+    // ContactSupportComponent,
     AboutComponent,
     HomeComponent,
     PageNotFoundComponent
@@ -57,7 +56,8 @@ const routes:Routes =[
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

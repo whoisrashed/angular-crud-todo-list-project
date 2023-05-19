@@ -25,29 +25,30 @@
         <div class="row">
 
           <!-- Grid column -->
-          <div class="col-md-12 col-lg-4">
+          <div class="col-md-12 col-lg-3"  *ngFor="let product of products$ | async">
 
 
             <!-- domain/detail
             domain/prodcts/detail -->
-           
-              <!-- Card -->
-              <a class="card hoverable mb-4" data-toggle="modal" [routerLink]="['detail',product?.id]" *ngFor="let product of products">
 
-                <!-- Card image -->
-                <img class="card-img-top" [src]="product.img" alt="Card image cap">
+            <!-- Card -->
+            <a class="card hoverable mb-4 " data-toggle="modal" [routerLink]="['detail',product?.id]"
+             >
 
-                <!-- Card content -->
-                <div class="card-body">
+              <!-- Card image -->
+              <img class="card-img-top" [src]="product?.image" alt="Card image cap">
 
-                  <h5 class="my-3">{{product.title}}</h5>
-                  <p class="card-text text-uppercase mb-3">Book</p>
+              <!-- Card content -->
+              <div class="card-body">
 
-                </div>
+                <h5 class="my-3">{{product.title}}</h5>
+                <p class="card-text text-uppercase mb-3">{{  product?.category}}</p>
 
-              </a>
-              <!-- Card -->
-           
+              </div>
+
+            </a>
+            <!-- Card -->
+
 
 
 
@@ -56,85 +57,6 @@
           </div>
           <!-- Grid column -->
 
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-4">
-
-            <!-- Card -->
-            <a class="card hoverable mb-4" data-toggle="modal">
-
-              <!-- Card image -->
-              <img class="card-img-top" src=" https://mdbootstrap.com/img/Photos/Others/img4.jpg" alt="Card image cap">
-
-              <!-- Card content -->
-              <div class="card-body">
-
-                <h5 class="my-3">Book</h5>
-                <p class="card-text text-uppercase mb-3">Book</p>
-
-              </div>
-
-            </a>
-            <!-- Card -->
-
-            <!-- Card -->
-            <a class="card hoverable mb-4" data-toggle="modal">
-
-              <!-- Card image -->
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/img5.jpg" alt="Card image cap">
-
-              <!-- Card content -->
-              <div class="card-body">
-
-                <h5 class="my-3">Notes</h5>
-                <p class="card-text text-uppercase mb-3">Note</p>
-
-              </div>
-
-            </a>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-4">
-
-            <!-- Card -->
-            <a class="card hoverable mb-4" data-toggle="modal">
-
-              <!-- Card image -->
-              <img class="card-img-top" src=" https://mdbootstrap.com/img/Photos/Others/img10.jpg" alt="Card image cap">
-
-              <!-- Card content -->
-              <div class="card-body">
-
-                <h5 class="my-3">T-shirt</h5>
-                <p class="card-text text-uppercase mb-3">Box</p>
-
-              </div>
-
-            </a>
-            <!-- Card -->
-
-            <!-- Card -->
-            <a class="card hoverable mb-4" data-toggle="modal">
-
-              <!-- Card image -->
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/img8.jpg" alt="Card image cap">
-
-              <!-- Card content -->
-              <div class="card-body">
-
-                <h5 class="my-3">Magazine</h5>
-                <p class="card-text text-uppercase mb-3">Book</p>
-
-              </div>
-
-            </a>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
 
         </div>
         <!-- Grid row -->
@@ -142,167 +64,7 @@
       </div>
       <!--Panel 1-->
 
-      <!--Panel 2-->
-      <div class="tab-pane fade" id="panel32" role="tabpanel">
 
-        <!-- Grid row -->
-        <div class="row">
-
-          <!-- Grid column -->
-          <div class="col-md-12 col-lg-4">
-
-            <!-- Card -->
-            <a class="card hoverable mb-4" data-toggle="modal">
-
-              <!-- Card image -->
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/img9.jpg" alt="Card image cap">
-
-              <!-- Card content -->
-              <div class="card-body">
-
-                <h5 class="my-3">Paper Bag</h5>
-                <p class="card-text text-uppercase mb-3">Bag</p>
-
-              </div>
-
-            </a>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-4">
-
-            <!-- Card -->
-            <a class="card hoverable mb-4" data-toggle="modal">
-
-              <!-- Card image -->
-              <img class="card-img-top" src=" https://mdbootstrap.com/img/Photos/Others/img4.jpg" alt="Card image cap">
-
-              <!-- Card content -->
-              <div class="card-body">
-
-                <h5 class="my-3">Book</h5>
-                <p class="card-text text-uppercase mb-3">Book</p>
-
-              </div>
-
-            </a>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-4">
-
-            <!-- Card -->
-            <a class="card hoverable mb-4" data-toggle="modal">
-
-              <!-- Card image -->
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/img8.jpg" alt="Card image cap">
-
-              <!-- Card content -->
-              <div class="card-body">
-
-                <h5 class="my-3">Magazine</h5>
-                <p class="card-text text-uppercase mb-3">Book</p>
-
-              </div>
-
-            </a>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-        </div>
-        <!-- Grid row -->
-
-      </div>
-      <!--Panel 2-->
-
-      <!--Panel 3-->
-      <div class="tab-pane fade" id="panel33" role="tabpanel">
-
-        <!-- Grid row -->
-        <div class="row">
-
-          <!-- Grid column -->
-          <div class="col-md-12 col-lg-4">
-
-            <!-- Card -->
-            <div class="card hoverable mb-4" data-toggle="modal">
-
-              <!-- Card image -->
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/img3.jpg" alt="Card image cap">
-
-              <!-- Card content -->
-              <div class="card-body">
-
-                <h5 class="my-3">Phone Bag</h5>
-                <p class="card-text text-uppercase mb-3">Bag, Box</p>
-
-              </div>
-
-            </div>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-4">
-
-            <!-- Card -->
-            <a class="card hoverable mb-4" data-toggle="modal">
-
-              <!-- Card image -->
-              <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/img5.jpg" alt="Card image cap">
-
-              <!-- Card content -->
-              <div class="card-body">
-
-                <h5 class="my-3">Notes</h5>
-                <p class="card-text text-uppercase mb-3">Note</p>
-
-              </div>
-
-            </a>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-4">
-
-            <!-- Card -->
-            <a class="card hoverable mb-4" data-toggle="modal">
-
-              <!-- Card image -->
-              <img class="card-img-top" src=" https://mdbootstrap.com/img/Photos/Others/img10.jpg" alt="Card image cap">
-
-              <!-- Card content -->
-              <div class="card-body">
-
-                <h5 class="my-3">T-shirt</h5>
-                <p class="card-text text-uppercase mb-3">Box</p>
-
-              </div>
-
-            </a>
-            <!-- Card -->
-
-          </div>
-          <!-- Grid column -->
-
-        </div>
-        <!-- Grid row -->
-
-      </div>
-      <!--Panel 3-->
 
     </div>
     <!--Tab panels-->
